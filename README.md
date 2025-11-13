@@ -8,6 +8,100 @@ Multivariate data analysis on multi-sensor measurement for in-line process monit
 https://borealisdata.ca/dataset.xhtml?persistentId=doi:10.5683%2FSP3%2FKJXYVL
 Project Desciption: Digital-twin of bioreactor for accelerated design and optimal operations in production of complex biologics - Mechanistic models to describe biological processes more realistically. Four multi-sensor bioprocess time series datasets to support the manuscript titled: "Multivariate data analysis on multi-sensor measurement for in-line process monitoring of adenovirus production in HEK293 cells." Under review at Biotechnology and Bioengineering. (2024-01-23)
 
+
+### LIST OF FILES
+
+  Four bioreactors were operated in batch or fed-batch modes (refer to Table 1
+  in publication for more details):
+
+    1) Cell Growth  (CG)
+    2) Adenovirus 1 (AdV01)
+    3) Adenovirus 2 (AdV02)
+    4) Adenovirus 3 (AdV03)
+  
+  Each bioreactor run contains the following files (X is the name of the batch):
+
+    ├── X_LucullusBioprocessData.xlsx
+    └── X_MWF/
+        ├── *.time
+        └── spectra/
+            └── *.dat
+
+  ### Explanation:
+    * An Excel spreadsheet of bioprocess data, each containing three sheets,
+      named like '*_LucullusBioprocessData.xlsx'. Sheet contents:
+
+        - Sheet 1, 'Lucullus Data':
+            Bioprocess data exported from Lucullus, including dielectric data
+        - Sheet 2, 'Capacitance':
+            Dielectric data acquired via Futura SCADA
+        - Sheet 3, 'Explain' (excluding batch CG):
+            Lucullus variable (port) specifications
+
+    * An '*_MWF/spectra/' directory. This contains the emission spectra data
+      produced by the multi-wavelength fluorometer.
+
+  NOTE: The file/directory naming scheme given in the tree of files below
+  corresponds to the bioreactor batch names defined above.
+
+  ```
+  $ \tree -nF
+
+  ./
+  ├── README.txt
+  ├── mvda_adenovirus_bioprocess_data.tar.gz.sha256
+  ├── mvda_adenovirus_bioprocess_data.tar.gz/      # (contents after extracting)
+  │   ├── AdV01_LucullusBioprocessData.xlsx
+  │   ├── AdV01_MWF/
+  │   │   ├── AdV01.time
+  │   │   ├── Spec_Area1.txt
+  │   │   ├── changes.txt
+  │   │   ├── predict_var.txt
+  │   │   └── spectra/
+  │   │       ├── AdV01_00000.dat
+  │   │       ├── ...
+  │   │       └── AdV01_01733.dat
+  │   ├── AdV02_LucullusBioprocessData.xlsx
+  │   ├── AdV02_MWF/
+  │   │   ├── AdV02.time
+  │   │   ├── Spec_Area1.txt
+  │   │   ├── background.txt
+  │   │   ├── changes.txt
+  │   │   ├── predict_var.txt
+  │   │   └── spectra/
+  │   │       ├── AdV02_00000.dat
+  │   │       ├── ...
+  │   │       └── AdV02_01732.dat
+  │   ├── AdV03_LucullusBioprocessData.xlsx
+  │   ├── AdV03_MWF/
+  │   │   ├── AdV03.time
+  │   │   ├── Spec_Area1.txt
+  │   │   ├── background-OFF.txt
+  │   │   ├── background-oN.txt
+  │   │   ├── changes.txt
+  │   │   ├── predict_var.txt
+  │   │   └── spectra/
+  │   │       ├── AdV03_00000.dat
+  │   │       ├── ...
+  │   │       └── AdV03_01226.dat
+  │   ├── CellGrowth_LucullusBioprocessData.xlsx
+  │   └── CellGrowth_MWF/
+  │       ├── CellGrowth.time
+  │       ├── Spec_Area1.txt
+  │       ├── predict_var.txt
+  │       └── spectra/
+  │           ├── CellGrowth_00000.dat
+  │           ├── ...
+  │           └── CellGrowth_02013.dat
+  ├── ExampleData.xlsx
+  └── ProcessedVariables.xlsx
+  
+  10 directories, 6734 files
+  (count includes README.txt and *.sha256 files at top-level)
+  ```
+
+
+
 ## Using Guidance
 https://customer-academy.databricks.com/learn/courses/2469/get-started-with-databricks-for-data-engineering
 
