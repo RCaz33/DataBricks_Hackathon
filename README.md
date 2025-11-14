@@ -14,19 +14,11 @@ Project Desciption: Digital-twin of bioreactor for accelerated design and optima
   Four bioreactors were operated in batch or fed-batch modes (refer to Table 1
   in publication for more details):
 
-    1) Cell Growth  (CG)
-    2) Adenovirus 1 (AdV01)
-    3) Adenovirus 2 (AdV02)
-    4) Adenovirus 3 (AdV03)
+    1) Adenovirus 1 (AdV01)
+    2) Adenovirus 2 (AdV02)
+    3) Adenovirus 3 (AdV03)
   
-  Each bioreactor run contains the following files (X is the name of the batch):
-
-    ├── X_LucullusBioprocessData.xlsx
-    └── X_MWF/
-        ├── *.time
-        └── spectra/
-            └── *.dat
-
+ 
   ### Explanation:
     * An Excel spreadsheet of bioprocess data, each containing three sheets,
       named like '*_LucullusBioprocessData.xlsx'. Sheet contents:
@@ -39,10 +31,10 @@ Project Desciption: Digital-twin of bioreactor for accelerated design and optima
             Lucullus variable (port) specifications
 
     * An '*_MWF/spectra/' directory. This contains the emission spectra data
-      produced by the multi-wavelength fluorometer.
+      produced by the multi-wavelength fluorometer. WE DON'T USE THIS
 
-  NOTE: The file/directory naming scheme given in the tree of files below
-  corresponds to the bioreactor batch names defined above.
+  Capacitance ---> in situ measurment (sampling rate = 1 minute)
+  Lucullus Data -> ex situ measurment (sampling rate = 5 minute)
 
   ```
   $ \tree -nF
