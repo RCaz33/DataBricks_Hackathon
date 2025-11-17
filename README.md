@@ -80,14 +80,14 @@ https://customer-academy.databricks.com/learn/courses/2469/get-started-with-data
 ## EDA
 
 1. 'Capacitance' 
-most of the variables are higly correlated (c.a. perason > 0.9). All the variables are processing results of raw data. There are no NaN values or duplicated rows. 
 
+most of the variables are higly correlated (c.a. perason > 0.9). All the variables are processing results of raw data. There are no NaN values or duplicated rows. 
 We keep 2 variables: Capacitance and Conductivity. Dataset shape from (8436, 22) to (8436, 2).
 
 2. 'Lucullus Data'
 
-We remove 14 variables labelled "Offline", 28 variables with a unique value, 8 variables with null values > 95%, and 7 varibales which are higly correlated (pearson r2 > 0.7). A total of 49 variables were removed. Dataset shape from (100913, 68) to (100908, 19)
-
+We remove 14 variables labelled "Offline", 28 variables with a unique value, 8 variables with null values > 95%, and 7 varibales which are higly correlated (pearson r2 > 0.7). 
+A total of 49 variables were removed. Dataset shape from (100913, 68) to (100908, 19)
 
 
 <img src="imgs/corr_capa.png"  width="50%"><img src="imgs/corr_time.png"  width="50%">![alt text](image.png)
